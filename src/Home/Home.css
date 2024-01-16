@@ -68,10 +68,6 @@
     flex-direction: column;
 }
 
-.search-container h2{
-    padding-top: 1rem;
-}
-
 .search-list{
     flex-grow: 1;
     display: flex;
@@ -80,8 +76,8 @@
 }
 
 .search-list div{
-    height:150px;
-    width: 160px;
+    height: 125px;
+    width: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
