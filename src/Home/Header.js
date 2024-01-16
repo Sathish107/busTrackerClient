@@ -14,7 +14,7 @@ const Header=()=>{
             </div>
             <h1>GOOD MORNING!</h1>
             <form>
-                {/* <IoSearchOutline /> */}
+                <IoSearchOutline />
                 <input
                     placeholder="search bus"
                 />  
