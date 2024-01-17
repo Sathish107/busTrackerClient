@@ -62,8 +62,12 @@ body,html{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    padding: 1.7rem;
+    /* padding: 1.7rem; */
     color: #056F91;
+}
+
+.Home-main h2{
+    padding: 1.7rem;
 }
 
 .search-container{
@@ -93,6 +97,10 @@ body,html{
     border-radius: 1.5rem;
     box-shadow:3px 3px grey;
     white-space: nowrap;
+}
+
+.search-list div:first-child{
+    margin-left: 1.7rem;
 }
 
 .search-list div p{
