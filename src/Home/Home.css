@@ -70,6 +70,11 @@ body,html{
     padding: 1rem 1.7rem 0.7rem 1.7rem;
 }
 
+.Home-main .second-heading{
+    padding: 0 1.7rem 0.7rem 1.7rem;
+    padding-top: 0;
+}
+
 .search-container{
     flex-grow: 1; 
     display: flex;

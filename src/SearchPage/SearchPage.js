@@ -1,22 +1,43 @@
-import { FaArrowLeft } from "react-icons/fa6";
-import { useNavigate } from "react-router-dom";
+import Header from "./Header";
+import Main from "./Main";
 import './SearchPage.css'
 
-const SearchPage=()=>{
-    const navigate=useNavigate()
+import { useEffect,useState } from "react";
+
+const SearchPage=({routes})=>{
+    const [search,setSearch]=useState('')
+    const [searchResults,setSearchResults]=useState([])
+
+    useEffect(()=>{
+        console.log(routes)
+    },[routes])
+
+    useEffect(()=>{
+        setSearchResults(routes.filter((route)=>(route.routeNo).includes(search)))
+        if(!search){
+            setSearchResults([])
+        }
+    },[search])
+
     return(
-        <header className="SearchPage-header">
-            <form className="Home-form"> 
-                <FaArrowLeft 
-                    type="button"
-                    onClick={()=>navigate(`/`)}
-                />
-                <input
-                    placeholder="search bus no or destination"
-                    autoFocus
-                />  
-            </form>
-        </header>
+        <>
+            {
+                (!routes.length)?
+                (<p style={{"textAlign":"center"}}>Loading...</p>):
+                (
+                    <>
+                    <Header 
+                        search={search}
+                        setSearch={setSearch} 
+                    />
+
+                    <Main 
+                        searchResults={searchResults}
+                    />
+                    </>
+                )
+            }
+        </>
     )
 }
 

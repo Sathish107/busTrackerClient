@@ -26,7 +26,7 @@ const Main=({recentlySearched,mostlySearched})=>{
 
             
             <div className="search-container">
-                <h2>Mostly searched</h2>
+                <h2 className="second-heading">Mostly searched</h2>
                 <div className="search-list">
                     {
                         (recentlySearched)&&
