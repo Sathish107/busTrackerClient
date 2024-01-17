@@ -1,22 +1,19 @@
 import Home from "./Home/Home"
+import SearchPage from "./SearchPage/SearchPage"
+import WatchLive from "./WatchLive/WatchLive"
+import Notification from "./Notification/Notification"
 import { useEffect } from "react"
+import { Route,Routes } from "react-router-dom"
 
-const App=()=>{
-    useEffect(()=>{
-        if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
-            document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            document.documentElement.webkitRequestFullscreen();
-        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
-            document.documentElement.msRequestFullscreen();
-        }   
-    },[])
-    
+const App=()=>{   
     return(
         <div className="App">
-            <Home />
+            <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path="/search" element={<SearchPage />}/>
+                <Route path="/watchlive" element={<WatchLive />}/>
+                <Route path="/notification" element={<Notification />}/>
+            </Routes>           
         </div>
 
     )

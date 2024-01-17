@@ -1,0 +1,26 @@
+.WatchLive-header{
+    display: flex;
+    align-items: center;
+    padding: 0.7rem;
+    background-color:  #056F91;
+    color: #f7d4a8;
+}
+
+.WatchLive-header svg{
+    font-size: 28px;
+    margin-right: 1rem;
+}
+
+.WatchLive-header h1{
+    font-size: 28px;
+}
+
+.WatchLive-main{
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+} 
+
+#map{ 
+    flex-grow: 1; 
+}
