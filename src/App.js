@@ -1,3 +1,4 @@
+import Login from "./Login/Login"
 import Home from "./Home/Home"
 import SearchPage from "./SearchPage/SearchPage"
 import RoutePage from "./RoutePage/RoutePage"
@@ -21,6 +22,7 @@ const App=()=>{
     return(
         <div className="App">
             <Routes>
+                <Route path="/login" element={<Login />}/>
                 <Route path="/" element={<Home />}/>
                 <Route path="/search" element={<SearchPage routes={routes}/>}/>
                 <Route path="/route/:id" element={<RoutePage routes={routes}/>}/>
