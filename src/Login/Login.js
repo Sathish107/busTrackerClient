@@ -2,10 +2,16 @@ import { useState } from "react"
 import './Login.css'
 import { Link } from "react-router-dom"
 
-const Login=()=>{
+const Login=({heading,setHeading,isUser,setIsUser})=>{
     const [userName,setUserName]=useState('')
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
+
+
+    const handleSignUp=()=>{
+        setHeading('Sign up')
+        setIsUser(false) 
+    }
 
     const handleSubmit=(e)=>{
         e.preventDefault()
@@ -17,15 +23,19 @@ const Login=()=>{
     return(
         <main className="Login-main">
             <div className="login-container">
-                <h2>Log in to <span>cityhopper</span></h2>
+                <h2>{heading} to <span>cityhopper</span></h2>
                 <form onSubmit={(e)=>handleSubmit(e)}>
-                    <input 
-                        placeholder="username"
-                        required
-                        type="text"
-                        value={userName}
-                        onChange={(e)=>setUserName(e.target.value)}
-                    />
+                    {
+                        !isUser&&
+                        <input 
+                            placeholder="username"
+                            required
+                            type="text"
+                            value={userName}
+                            onChange={(e)=>setUserName(e.target.value)}
+                        />
+                    }
+
                     <input 
                         placeholder="email"
                         required
@@ -40,9 +50,12 @@ const Login=()=>{
                         value={password}
                         onChange={(e)=>setPassword(e.target.value)}
                     />
-                    <button type="submit">Login</button>
+                    <button type="submit">{heading}</button>
                 </form>
-                <p>Dont have an account? <Link className="link-text">sign up</Link></p>
+                {
+                    isUser &&
+                    <p>Dont have an account? <Link className="link-text" onClick={()=>handleSignUp()}>sign up</Link></p>
+                }    
             </div>
         </main>
     )

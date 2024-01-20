@@ -1,4 +1,4 @@
-import Login from "./Login/Login"
+import Login from "./Login/Login" 
 import Home from "./Home/Home"
 import SearchPage from "./SearchPage/SearchPage"
 import RoutePage from "./RoutePage/RoutePage"
@@ -9,6 +9,8 @@ import { Route,Routes } from "react-router-dom"
 
 const App=()=>{   
     const [routes,setRoutes]=useState([])
+    const [heading,setHeading]=useState('Log in')
+    const [isUser,setIsUser]=useState(true)
 
     useEffect(()=>{
         const fetchData=async ()=>{
@@ -22,7 +24,12 @@ const App=()=>{
     return(
         <div className="App">
             <Routes>
-                <Route path="/login" element={<Login />}/>
+                <Route path="/login" element={<Login 
+                    heading={heading} 
+                    setHeading={setHeading} 
+                    isUser={isUser}
+                    setIsUser={setIsUser}
+                />}/>
                 <Route path="/" element={<Home />}/>
                 <Route path="/search" element={<SearchPage routes={routes}/>}/>
                 <Route path="/route/:id" element={<RoutePage routes={routes}/>}/>
