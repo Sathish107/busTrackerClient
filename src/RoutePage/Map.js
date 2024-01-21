@@ -7,7 +7,7 @@ let map,myMarker
 
 const Map=({route})=>{
     useEffect(()=>{
-        map = L.map('map').setView([12.9889,79.9702],5)
+        map = L.map('map',{ zoomControl: false }).setView([12.9889,79.9702],5)
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 20 
@@ -50,7 +50,7 @@ const Map=({route})=>{
         }).addTo(map)
 
         return () => {
-            map.remove();
+            map.remove(); 
         }
     },[])
 

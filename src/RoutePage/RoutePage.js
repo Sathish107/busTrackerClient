@@ -1,4 +1,5 @@
 import Map from "./Map"
+import RouteInfo from "./RouteInfo"
 import { useParams } from "react-router-dom"
 import './RoutePage.css'
 
@@ -9,6 +10,7 @@ const RoutePage=({routes})=>{
     return( 
         <main className="RoutePage-main">
             <Map route={route}/>
+            <RouteInfo />
         </main>
     )
 }
