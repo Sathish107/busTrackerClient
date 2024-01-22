@@ -55,7 +55,8 @@ const Map=({route})=>{
     },[])
 
     return(
-        <div id="map"></div>
+        <div id="map">
+        </div>
     )
 }
 
