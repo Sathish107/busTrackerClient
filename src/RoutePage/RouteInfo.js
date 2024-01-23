@@ -1,20 +1,28 @@
+import { RiBusFill } from "react-icons/ri"
+
 const RouteInfo=({route})=>{
     return(
         <div className="RouteInfo">
-            <h1>{route.routeNo}</h1>
-            <h2>{route.start} to {route.destination}</h2>
+            <div className="route-headings">
+                <h1>{route.routeNo}</h1>
+                <h2>{route.start} to {route.destination}</h2>
+            </div>
             <div className="stoplist">
-                <div className="sidebar"></div>
+                <div className="sidebar"><RiBusFill /></div>
                 <div>
                     {
                         route.stops.map((stop)=>{
                             return(
-                                <p key={stop.id}>
-                                    {stop.stopName}
-                                </p>
+                                <>
+                                    <p className="space-para"></p>
+                                    <p key={stop.id}>
+                                        {stop.stopName}
+                                    </p>
+                                    <p className="space-para"></p>
+                                </>
                             )
-                        })
-                    }
+                        })        
+                    }                   
                 </div>
             </div>
         </div>

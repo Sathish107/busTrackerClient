@@ -23,9 +23,13 @@
 
 .RouteInfo{
     height: 55vh;   
+    overflow-y: auto;
+    position: relative;
 } 
 
-.RouteInfo h1,h2{
+.route-headings{
+    position: sticky;
+    top: 0;
     padding: 0.4rem 0.25rem;
     background-color: #056F91;
     color: #f7d4a8;
@@ -40,8 +44,11 @@
 
 .stoplist p{
     font-weight: 600;
-    color: #056F91;
-    margin-bottom: 2rem;
+    color: #056F91; 
+}
+
+.space-para{
+    height: 1rem;
 }
 
 .stoplist p:last-child{
@@ -52,4 +59,8 @@
     width: 10px;
     height: auto;
     background-color: #f7d4a8; 
+}
+
+.sidebar svg{
+    margin-top: 12rem;
 }
