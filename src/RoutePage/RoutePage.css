@@ -30,16 +30,19 @@
 .route-headings{
     position: sticky;
     top: 0;
-    padding: 0.4rem 0.25rem;
+    padding: 0.4rem 0.55rem;
     background-color: #056F91;
     color: #f7d4a8;
 }
 
 .stoplist{
-    padding: 0.7rem 0.25rem;
-    display: flex; 
-    gap: 1rem;
+    padding: 0.7rem 0.55rem;
     overflow-y: scroll;
+}
+
+.stopname-container{
+    display: flex;
+    gap: 1rem;
 }
 
 .stoplist p{
@@ -48,7 +51,19 @@
 }
 
 .space-para{
-    height: 1rem;
+    height: 1rem; 
+    position: relative;
+}
+
+.stoplist svg{
+    position: absolute;
+    font-size: 30px;
+    top: -0.5rem;
+    left: -0.5rem;
+    color: white;
+    background-color:black;
+    padding: 3px;
+    border-radius: 50%;
 }
 
 .stoplist p:last-child{
@@ -57,10 +72,5 @@
 
 .sidebar{
     width: 10px;
-    height: auto;
     background-color: #f7d4a8; 
-}
-
-.sidebar svg{
-    margin-top: 12rem;
 }

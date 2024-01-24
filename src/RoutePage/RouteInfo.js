@@ -8,18 +8,22 @@ const RouteInfo=({route})=>{
                 <h2>{route.start} to {route.destination}</h2>
             </div>
             <div className="stoplist">
-                <div className="sidebar"><RiBusFill /></div>
                 <div>
                     {
                         route.stops.map((stop)=>{
                             return(
-                                <>
-                                    <p className="space-para"></p>
-                                    <p key={stop.id}>
-                                        {stop.stopName}
-                                    </p>
-                                    <p className="space-para"></p>
-                                </>
+                                <div className="stopname-container" key={stop.id}>
+                                    <div className="sidebar">
+                                        <p className="space-para"></p>
+                                        <p className="space-para">{(stop.stopName==='SVCE college')&&<RiBusFill />}</p>
+                                        <p className="space-para"></p>
+                                    </div>
+                                    <div>
+                                        <p className="space-para"></p>
+                                        <p>{stop.stopName}</p>
+                                        <p className="space-para"></p>
+                                    </div>
+                                </div>
                             )
                         })        
                     }                   
