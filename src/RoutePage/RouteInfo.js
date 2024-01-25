@@ -1,6 +1,7 @@
-import { RiBusFill } from "react-icons/ri"
+import StopContainer from "./StopContainer"
 
 const RouteInfo=({route})=>{
+
     return(
         <div className="RouteInfo">
             <div className="route-headings">
@@ -12,18 +13,7 @@ const RouteInfo=({route})=>{
                     {
                         route.stops.map((stop)=>{
                             return(
-                                <div className="stopname-container" key={stop.id}>
-                                    <div className="sidebar">
-                                        <p className="space-para"></p>
-                                        <p className="space-para">{(stop.stopName==='SVCE college')&&<RiBusFill />}</p>
-                                        <p className="space-para"></p>
-                                    </div>
-                                    <div>
-                                        <p className="space-para"></p>
-                                        <p>{stop.stopName}</p>
-                                        <p className="space-para"></p>
-                                    </div>
-                                </div>
+                                <StopContainer stop={stop} />
                             )
                         })        
                     }                   
