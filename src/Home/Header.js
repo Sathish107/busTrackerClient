@@ -5,12 +5,15 @@ import { LuBell } from "react-icons/lu"
 import { IoSearchOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
-const Header=()=>{
+const Header=({setIsMenuClicked})=>{
     const navigate=useNavigate()
+
     return(
         <header className="Home-header">
             <div className="icon-container">
-                <LuMenu />
+                <LuMenu 
+                    onClick={()=>setIsMenuClicked(true)}
+                />
                 <RiBusFill />
                 <LuBell 
                     onClick={()=>navigate(`/notification`)}

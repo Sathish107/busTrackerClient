@@ -1,0 +1,44 @@
+.MenuBar-container{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    background-color: hsla(0, 0%, 0%,0.5);
+}
+
+.MenuBar-list{
+    display: inline-block;
+    min-height: 100vh;
+    width:250px;
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: white;
+}
+
+.MenuBar-list ul{
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.MenuBar-list li{
+    margin: 1.5rem 0;
+    color:  #056F91;
+}
+
+.MenuBar-list a{
+    display: flex;
+    width: 100%;
+}
+
+.MenuBar-list svg{
+    margin-right: 1rem; 
+}
+
+.MenuBar-list li:last-child{
+    color: rgb(228, 110, 110);
+}
+
+.MenuBar-list p{
+     color:  #056F91;
+}
+

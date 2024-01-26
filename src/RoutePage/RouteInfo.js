@@ -1,6 +1,7 @@
 import StopContainer from "./StopContainer"
 
 const RouteInfo=({route})=>{
+    const stopCount=route.stops.length
 
     return(
         <div className="RouteInfo">
@@ -13,7 +14,10 @@ const RouteInfo=({route})=>{
                     {
                         route.stops.map((stop)=>{
                             return(
-                                <StopContainer stop={stop} />
+                                <StopContainer 
+                                    stop={stop} 
+                                    stopCount={stopCount}
+                                />
                             )
                         })        
                     }                   
