@@ -11,6 +11,8 @@ const App=()=>{
     const [routes,setRoutes]=useState([])
     const [heading,setHeading]=useState('Log in')
     const [isUser,setIsUser]=useState(true)
+    const [recentlySearched,setRecentlySearched]=useState([])
+    const [mostlySearched,setMostlySearched]=useState([])
 
     useEffect(()=>{
         const fetchData=async ()=>{
@@ -30,8 +32,16 @@ const App=()=>{
                     isUser={isUser}
                     setIsUser={setIsUser}
                 />}/>
-                <Route path="/" element={<Home />}/>
-                <Route path="/search" element={<SearchPage routes={routes}/>}/>
+                <Route path="/" element={<Home 
+                    routes={routes}
+                    recentlySearched={recentlySearched}
+                    mostlySearched={mostlySearched}
+                />}/>
+                <Route path="/search" element={<SearchPage 
+                    routes={routes}
+                    setRecentlySearched={setRecentlySearched}
+                    setMostlySearched={setMostlySearched}
+                />}/>
                 <Route path="/route/:id" element={<RoutePage routes={routes}/>}/>
                 <Route path="/watchlive" element={<WatchLive />}/>
                 <Route path="/notification" element={<Notification />}/>

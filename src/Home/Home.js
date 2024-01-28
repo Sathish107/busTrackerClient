@@ -5,44 +5,8 @@ import Footer from "./Footer"
 import './Home.css'
 import { useState } from "react"
 
-const Home=()=>{
+const Home=({recentlySearched,mostlySearched})=>{
     const [isMenuClicked,setIsMenuClicked]=useState(false)
-    const [recentlySearched,setRecentlySearched]=useState([
-        {
-            start:'kanchipuram',
-            destination:'sriperumbudur'
-        },
-        {
-            start:'Anna Nagar',
-            destination:'Tambaram'            
-        },
-        {
-            start:'kanchipuram',
-            destination:'sriperumbudur'
-        },
-        {
-            start:'Anna Nagar',
-            destination:'Tambaram'            
-        },
-        {
-            start:'kanchipuram',
-            destination:'sriperumbudur'
-        },
-        {
-            start:'Anna Nagar',
-            destination:'Tambaram'            
-        }
-    ])
-    const [mostlySearched,setMostlySearched]=useState([
-        {
-            start:'kanchipuram',
-            destination:'sriperumbudur'
-        },
-        {
-            start:'Anna Nagar',
-            destination:'Tambaram'            
-        }        
-    ])
 
     return(
         <>

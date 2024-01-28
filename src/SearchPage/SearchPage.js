@@ -4,18 +4,28 @@ import './SearchPage.css'
 
 import { useEffect,useState } from "react";
 
-const SearchPage=({routes})=>{
+const SearchPage=({routes,setRecentlySearched,setMostlySearched})=>{
     const [search,setSearch]=useState('')
-    const [searchResults,setSearchResults]=useState([])
+    const [searchedRouteNo,setSearchedRouteNo]=useState([])
+    const [searchedStop,setSearchedStop]=useState([])
 
     useEffect(()=>{
-        console.log(routes)
-    },[routes])
+        setSearchedRouteNo(routes.filter((route)=>
+            (route.routeNo.toLowerCase()).includes(search.toLowerCase())
+        ))
 
-    useEffect(()=>{
-        setSearchResults(routes.filter((route)=>(route.routeNo).includes(search)))
+        setSearchedStop([])
+        routes.filter((route)=>{
+            var stopsArray=route.stops.filter((stop)=>(stop.stopName.toLowerCase()).includes(search.toLowerCase()))
+            if(stopsArray.length){
+                setSearchedStop((previousSearchedStop)=>[...previousSearchedStop,{route:route,stop:stopsArray[0]}])
+            }
+            return null
+        })
+
         if(!search){
-            setSearchResults([])
+            setSearchedRouteNo([])
+            setSearchedStop([])
         }
     },[search])
 
@@ -26,14 +36,17 @@ const SearchPage=({routes})=>{
                 (<p style={{"textAlign":"center"}}>Loading...</p>):
                 (
                     <>
-                    <Header 
-                        search={search}
-                        setSearch={setSearch} 
-                    />
+                        <Header 
+                            search={search}
+                            setSearch={setSearch} 
+                        />
 
-                    <Main 
-                        searchResults={searchResults}
-                    />
+                        <Main 
+                            searchedRouteNo={searchedRouteNo}
+                            searchedStop={searchedStop}
+                            setRecentlySearched={setRecentlySearched}
+                            setMostlySearched={setMostlySearched}
+                        />
                     </>
                 )
             }

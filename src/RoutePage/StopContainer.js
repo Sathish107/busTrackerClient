@@ -5,7 +5,7 @@ const StopContainer=({stop,stopCount})=>{
     const [height,setHeight]=useState(4)
     const [align,setAlign]=useState('centre')
     const [isClicked,setIsClicked]=useState(false)  
-    console.log(stopCount)
+
     const styleTop={
         "height":`${height}rem`,
         "borderRadius":"10px 10px 0 0"
