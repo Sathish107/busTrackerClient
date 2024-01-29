@@ -10,21 +10,17 @@ const Main=({searchedRouteNo,searchedStop,setRecentlySearched,setMostlySearched}
         }])
 
         setMostlySearched((previousSearched)=>{
-            console.log(previousSearched)
             if(previousSearched){
-                console.log("entered")
                 const existingEntry = previousSearched.find((search) =>
                     search.start === route.start && search.destination === route.destination
                 )
               
                 if (existingEntry) {
-                    console.log("exist")
                     return previousSearched.map((search) =>
                         search === existingEntry
                         ? { ...search, count: search.count + 1 }
                         : search
                 )}else{
-                    console.log("new")
                     return ([...previousSearched,{
                         id:route.id,
                         start:route.start,

@@ -10,18 +10,17 @@ const RouteInfo=({route})=>{
                 <h2>{route.start} to {route.destination}</h2>
             </div>
             <div className="stoplist">
-                <div>
-                    {
-                        route.stops.map((stop)=>{
-                            return(
-                                <StopContainer 
-                                    stop={stop} 
-                                    stopCount={stopCount}
-                                />
-                            )
-                        })        
-                    }                   
-                </div>
+                {
+                    route.stops.map((stop)=>{
+                        return(
+                            <StopContainer
+                                key={stop.id} 
+                                stop={stop} 
+                                stopCount={stopCount}
+                            />
+                        )
+                    })        
+                }     
             </div>
         </div>
     )

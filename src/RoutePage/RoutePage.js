@@ -17,7 +17,7 @@ const RoutePage=({routes})=>{
             {   
                 (route)&&
                 <>
-                <FaArrowLeft className="back-button" onClick={()=>navigate(`/search`)}/>
+                <FaArrowLeft className="back-button" onClick={()=>navigate(`/`)}/>
                 <Map route={route}/>
                 <RouteInfo route={route}/>                    
                 </>

@@ -12,6 +12,8 @@ const Main=({recentlySearched,mostlySearched})=>{
                             recentlySearched.map((search)=>{
                                 return(
                                     <SearchInstance 
+                                        key={search.id}
+                                        id={search.id}
                                         start={search.start}
                                         destination={search.destination}
                                     />
@@ -32,6 +34,8 @@ const Main=({recentlySearched,mostlySearched})=>{
                             recentlySearched.map((search)=>{
                                 return(
                                     <SearchInstance 
+                                        key={search.id}
+                                        id={search.id}
                                         start={search.start}
                                         destination={search.destination}
                                     />
