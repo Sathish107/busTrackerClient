@@ -4,8 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 const MenuBar=({setIsMenuClicked})=>{
     const navigate=useNavigate()
+    const handleClick = (event) => {
+        if (event.target.classList.contains('MenuBar-container')) {
+            setIsMenuClicked(false);
+        }
+    };
     return(
-        <div className="MenuBar-container" onClick={()=>setIsMenuClicked(false)}>
+        <div className="MenuBar-container" onClick={(event)=>handleClick(event)}>
             <div className='MenuBar-list'>
                 <MdOutlineClose onClick={()=>setIsMenuClicked(false)}/>
                 <ul>
