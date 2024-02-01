@@ -1,5 +1,6 @@
 import Login from "./Login/Login" 
 import Home from "./Home/Home"
+import SeeMore from "./SeeMore/SeeMore"
 import SearchPage from "./SearchPage/SearchPage"
 import RoutePage from "./RoutePage/RoutePage"
 import WatchLive from "./WatchLive/WatchLive"
@@ -32,6 +33,9 @@ const App=()=>{
                     isUser={isUser}
                     setIsUser={setIsUser}
                 />}/>
+                <Route path="/recentlysearched" element={<SeeMore 
+                    recentlySearched={recentlySearched}
+                />} />
                 <Route path="/" element={<Home 
                     routes={routes}
                     recentlySearched={recentlySearched}

@@ -7,7 +7,7 @@ const SearchInstance=({id,start,destination})=>{
         <>
             {
                 (id)?
-                <div key={id} onClick={()=>{
+                <div onClick={()=>{
                     navigate(`/route/${id}`)
                 }}>
                     <p>{(start.length > 11)?start.slice(0,11)+"...":start}</p>

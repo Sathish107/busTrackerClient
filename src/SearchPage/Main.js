@@ -3,18 +3,24 @@ import { useNavigate } from "react-router-dom"
 const Main=({searchedRouteNo,searchedStop,setRecentlySearched,setMostlySearched})=>{
     const navigate=useNavigate()
     const handleClick=(route)=>{
-        setRecentlySearched((previousSearched)=>[...previousSearched,{
-            id:route.id,
-            start:route.start,
-            destination:route.destination
-        }])
+        console.log(route.id)
+        setRecentlySearched((previousSearched)=>{
+            const id =(previousSearched.length)?previousSearched[previousSearched.length-1].id+1:1
+            return([...previousSearched,{
+                id:id,
+                start:route.start,
+                destination:route.destination
+            }])
+        })
 
         setMostlySearched((previousSearched)=>{
-            if(previousSearched){
+            if(previousSearched.length){
+                console.log("entered")
                 const existingEntry = previousSearched.find((search) =>
                     search.start === route.start && search.destination === route.destination
                 )
               
+                const id=previousSearched[previousSearched.length-1].id+1
                 if (existingEntry) {
                     return previousSearched.map((search) =>
                         search === existingEntry
@@ -22,7 +28,7 @@ const Main=({searchedRouteNo,searchedStop,setRecentlySearched,setMostlySearched}
                         : search
                 )}else{
                     return ([...previousSearched,{
-                        id:route.id,
+                        id:id,
                         start:route.start,
                         destination:route.destination,
                         count:1
@@ -31,10 +37,10 @@ const Main=({searchedRouteNo,searchedStop,setRecentlySearched,setMostlySearched}
         }else{
             console.log("new")
             return ([...previousSearched,{
-                id:route.id,
+                id:1,
                 start:route.start,
                 destination:route.destination,
-                count:0
+                count:1
             }])
         }
     })
