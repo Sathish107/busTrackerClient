@@ -26,7 +26,7 @@ const Main=({recentlySearched,mostlySearched})=>{
                                 return(
                                     <SearchInstance 
                                         key={search.id}
-                                        id={search.id}
+                                        id={search.routeId}
                                         start={search.start}
                                         destination={search.destination}
                                     />

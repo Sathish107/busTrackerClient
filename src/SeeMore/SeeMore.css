@@ -1,0 +1,16 @@
+.SeeMore-main{
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: scroll;
+}
+
+.SeeMore-main div{
+    margin-bottom: 0.7rem;
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.SeeMore-main p{
+    margin-bottom: 0.3rem;
+}

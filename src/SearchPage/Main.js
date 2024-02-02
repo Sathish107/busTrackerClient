@@ -8,6 +8,7 @@ const Main=({searchedRouteNo,searchedStop,setRecentlySearched,setMostlySearched}
             const id =(previousSearched.length)?previousSearched[previousSearched.length-1].id+1:1
             return([...previousSearched,{
                 id:id,
+                routeId:route.id,
                 start:route.start,
                 destination:route.destination
             }])
@@ -29,6 +30,7 @@ const Main=({searchedRouteNo,searchedStop,setRecentlySearched,setMostlySearched}
                 )}else{
                     return ([...previousSearched,{
                         id:id,
+                        routeId:route.id,
                         start:route.start,
                         destination:route.destination,
                         count:1
@@ -38,6 +40,7 @@ const Main=({searchedRouteNo,searchedStop,setRecentlySearched,setMostlySearched}
             console.log("new")
             return ([...previousSearched,{
                 id:1,
+                routeId:route.id,
                 start:route.start,
                 destination:route.destination,
                 count:1
