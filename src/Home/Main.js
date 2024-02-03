@@ -10,7 +10,7 @@ const Main=({recentlySearched,mostlySearched})=>{
     const [mostlyLength,setMostlyLength]=useState(0)
     useEffect(() => {
         setRecentlyLength(Math.min(recentlySearched.length, 3));
-        setMostlyLength(1)
+        setMostlyLength(Math.min(mostlySearched.length, 3))
     }, [recentlySearched]);
     
 
@@ -45,10 +45,10 @@ const Main=({recentlySearched,mostlySearched})=>{
             
             <div className="search-container">
             <h2>Mostly searched</h2>
-                {(recentlySearched.length)?
+                {(mostlySearched.length)?
                     <div className="search-list">
                         {
-                            recentlySearched.map((search)=>{
+                            mostlySearched.slice(0,mostlyLength).map((search)=>{
                                 return(
                                     <SearchInstance 
                                         key={search.id}
@@ -57,8 +57,10 @@ const Main=({recentlySearched,mostlySearched})=>{
                                         destination={search.destination}
                                     />
                                 )
-                            })
-                            
+                            }) 
+                        }
+                        {
+                            (recentlySearched.length>recentlyLength) && <p className="see-more"><MdKeyboardArrowRight onClick={()=>navigate('/mostlysearched')}/></p>
                         }
                     </div>:
                     <p style={{"textAlign":"center"}}>There is no search history</p>
